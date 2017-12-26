@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DhisHelpService} from "../../services/dhis-help.service";
+import {HttpProviderService} from "../../services/http-provider.service";
 
 @Component({
   selector: 'app-get-help',

@@ -36,7 +36,10 @@ export class HttpProviderService {
 
   getAllUsers(){
     let url = '../../../api/users.json';
-    return this.httpProvider.get(url).map((response:Response) =>
+
+    let reqstHeadDon = new Headers({'Access-Control-Allow-Origin': '*'});
+    this.options = new RequestOptions({ headers: reqstHeadDon });
+    return this.httpProvider.get(url, this.options).map((response:Response) =>
         response.json()
       // console.log("meme :"+response)
     ).catch( this.handleError );
